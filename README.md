@@ -5,7 +5,7 @@
 
 ## Overview
 
-Using a preprocessed dataset taken from the "Individual household electric power consumption" dataset, this project carries out energy disaggregation (also known as non-intrusive load monitoring, or NILM). Utilising the llama-3.3-70b-versatile model through the Groq API platform, the project leverages the power of large language models (LLMs) to address a variety of insightful dataset queries.
+This work centers on energy disaggregation (also known as non-intrusive load monitoring, or NILM)using a publicly available household energy dataset. Utilising the llama-3.3-70b-versatile model through the Groq API platform, the project leverages the power of large language models (LLMs) to address a variety of insightful language queries.
 
 ## Groq API and LLM Used
 
@@ -17,7 +17,7 @@ Using a preprocessed dataset taken from the "Individual household electric power
 
 - **Source**: UCI Machine Learning Repository
 - **File Used**: `household_power_consumption.csv`
-- **Size**: ~2M entries, sampled at 1-minute intervals
+- **Size**: ~2M entries with 9 features sampled at 1-minute intervals
 
 ## Summary of Tasks Completed
 
@@ -30,7 +30,7 @@ Using a preprocessed dataset taken from the "Individual household electric power
    - Asked intelligent questions to the LLM model.
 
 3. **LLM-Based Code Generation**
-   - Used Groq API to generate Python scripts on-the-fly based on each query
+   - Used Groq API to generate Python scripts dynamically based on each query
    - Ran and verified the generated code for correctness and insight
 
 4. **Visualization and Statistical Analysis**
