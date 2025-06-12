@@ -1,20 +1,62 @@
-# LLM_Power_Consumption
+# Energy Disaggregation using LLaMA-3.3-70B via Groq API
 
-Name : Barsha Sadhu
+## Author
+**Barsha Sadhu**
 
-# Summary of the project: 
-Using a preprocessed dataset taken from the "Individual household electric power consumption" dataset, this project carries out energy disaggregation (also known as non-intrusive load monitoring, or NILM). Utilising the llama-3.3-70b-versatile model through the Groq API platform, the project leverages the power of large language models (LLMs) to address a variety of insightful dataset queries.
+## Overview
 
-# Tasks Completed
-Data Source: UCI Machine Learning Repository
-Preprocessed raw power consumption data (household_power_consumption.csv)
+This project focuses on non-intrusive energy disaggregation using a publicly available household energy dataset. The analysis leverages a large language model (LLM), **LLaMA-3.3-70B-Versatile**, accessed through the **Groq API**, to dynamically generate Python scripts that answer specific analytical queries on the dataset.
 
-Handled missing values, date-time parsing, and type conversions
+## Groq API and LLM Used
 
-Designed and issued intelligent queries for data analysis
+- **LLM**: `llama-3.3-70b-versatile`
+- **API Platform**: [Groq API Console](https://console.groq.com)
+- **Purpose**: Natural language-driven data querying and script generation for power consumption analytics.
 
-Used LLM (llama-3.3-70b-versatile) to generate Python code for query execution and data insight extraction
+## Dataset
 
-# Groq API Details
-  LLM Used: llama-3.3-70b-versatile
-  Platform: Groq API
+- **Name**: Individual Household Electric Power Consumption Dataset
+- **Format**: CSV
+- **File Used**: `household_power_consumption (1).csv`
+- **Preprocessing Includes**:
+  - Combined `Date` and `Time` columns into a single `DateTime` index
+  - Removed missing values and converted types
+  - Filtered relevant timeframes and columns for targeted analysis
+
+## Summary of Tasks Completed
+
+1. **Data Preprocessing**
+   - Cleaned and formatted the raw dataset
+   - Resampled and transformed power readings for specific use cases
+
+2. **Natural Language Queries to LLM**
+   - Asked intelligent questions like:
+     - What was the average energy usage in March 2007?
+     - What hour on Christmas 2006 had the highest usage?
+     - Compare weekday vs weekend usage
+     - Plot energy usage for specific periods
+     - Compute correlation between power and sub-metering data
+
+3. **LLM-Based Code Generation**
+   - Used Groq API to generate Python scripts on-the-fly based on each query
+   - Ran and verified the generated code for correctness and insight
+
+4. **Visualization and Statistical Analysis**
+   - Created bar charts, line plots, and correlation heatmaps
+   - Interpreted seasonal and daily energy usage trends
+
+## Helper Scripts (Optional/Recommended)
+
+If separating concerns in your repo:
+
+- `preprocess_data.py` — For converting and cleaning the raw dataset
+- `query_llm.py` — Script to interact with the Groq API and generate code
+- `visualize.py` — For all Matplotlib/Seaborn plots
+- `requirements.txt` — Python dependencies (`pandas`, `matplotlib`, `seaborn`, `groq`)
+
+## Example Usage
+
+```bash
+python preprocess_data.py   # Prepares dataset
+python query_llm.py         # Asks LLM to generate analysis code
+
