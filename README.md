@@ -5,7 +5,7 @@
 
 ## Overview
 
-This project focuses on non-intrusive energy disaggregation using a publicly available household energy dataset. The analysis leverages a large language model (LLM), **LLaMA-3.3-70B-Versatile**, accessed through the **Groq API**, to dynamically generate Python scripts that answer specific analytical queries on the dataset.
+Using a preprocessed dataset taken from the "Individual household electric power consumption" dataset, this project carries out energy disaggregation (also known as non-intrusive load monitoring, or NILM). Utilising the llama-3.3-70b-versatile model through the Groq API platform, the project leverages the power of large language models (LLMs) to address a variety of insightful dataset queries.
 
 ## Groq API and LLM Used
 
@@ -15,27 +15,19 @@ This project focuses on non-intrusive energy disaggregation using a publicly ava
 
 ## Dataset
 
-- **Name**: Individual Household Electric Power Consumption Dataset
-- **Format**: CSV
-- **File Used**: `household_power_consumption (1).csv`
-- **Preprocessing Includes**:
-  - Combined `Date` and `Time` columns into a single `DateTime` index
-  - Removed missing values and converted types
-  - Filtered relevant timeframes and columns for targeted analysis
+- **Source**: UCI Machine Learning Repository
+- **File Used**: `household_power_consumption.csv`
+- **Size**: ~2M entries, sampled at 1-minute intervals
 
 ## Summary of Tasks Completed
 
 1. **Data Preprocessing**
-   - Cleaned and formatted the raw dataset
-   - Resampled and transformed power readings for specific use cases
-
+  - Combined `Date` and `Time` columns into a single `datetime` index
+  - Handled missing values and type conversion
+  - Filtered relevant timeframes and columns for targeted analysis
+  - 
 2. **Natural Language Queries to LLM**
-   - Asked intelligent questions like:
-     - What was the average energy usage in March 2007?
-     - What hour on Christmas 2006 had the highest usage?
-     - Compare weekday vs weekend usage
-     - Plot energy usage for specific periods
-     - Compute correlation between power and sub-metering data
+   - Asked intelligent questions to the LLM model.
 
 3. **LLM-Based Code Generation**
    - Used Groq API to generate Python scripts on-the-fly based on each query
@@ -45,18 +37,5 @@ This project focuses on non-intrusive energy disaggregation using a publicly ava
    - Created bar charts, line plots, and correlation heatmaps
    - Interpreted seasonal and daily energy usage trends
 
-## Helper Scripts (Optional/Recommended)
 
-If separating concerns in your repo:
-
-- `preprocess_data.py` — For converting and cleaning the raw dataset
-- `query_llm.py` — Script to interact with the Groq API and generate code
-- `visualize.py` — For all Matplotlib/Seaborn plots
-- `requirements.txt` — Python dependencies (`pandas`, `matplotlib`, `seaborn`, `groq`)
-
-## Example Usage
-
-```bash
-python preprocess_data.py   # Prepares dataset
-python query_llm.py         # Asks LLM to generate analysis code
 
