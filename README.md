@@ -1,4 +1,4 @@
-# Energy Disaggregation using LLaMA-3.3-70B via Groq API
+# Power Utilization analysis with LLMs
 
 ## Author
 **Barsha Sadhu**
